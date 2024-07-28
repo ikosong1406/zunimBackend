@@ -10,6 +10,7 @@ const ProductSchema = new mongoose.Schema({
   mainImage: { type: String },
   additionalImages: [String],
   availableColors: [String],
+  availableSize: [String],
   brand: { type: String },
   isBestSeller: { type: Boolean },
   isNewArrival: { type: Boolean },
