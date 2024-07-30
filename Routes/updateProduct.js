@@ -11,9 +11,6 @@ router.post("/", async (req, res) => {
       description,
       price,
       category,
-      imageUrl,
-      availableColors,
-      brand,
       isBestSeller,
       isNewArrival,
     } = req.body;
@@ -34,15 +31,6 @@ router.post("/", async (req, res) => {
     }
     if (typeof category === "string" && category.trim() !== "") {
       updateData.category = category.trim();
-    }
-    if (typeof imageUrl === "string" && imageUrl.trim() !== "") {
-      updateData.imageUrl = imageUrl.trim();
-    }
-    if (Array.isArray(availableColors) && availableColors.length > 0) {
-      updateData.availableColors = availableColors;
-    }
-    if (typeof brand === "string" && brand.trim() !== "") {
-      updateData.brand = brand.trim();
     }
     if (typeof isBestSeller === "boolean") {
       updateData.isBestSeller = isBestSeller;
