@@ -21,6 +21,8 @@ const OrderSchema = new mongoose.Schema({
       quantity: { type: Number },
       price: { type: Number },
       mainImage: { type: String },
+      selectedSize: { type: String },
+      selectedColor: { type: String },
     },
   ],
   deliveryFee: { type: Number },
