@@ -19,7 +19,8 @@ const OrderSchema = new mongoose.Schema({
     {
       name: { type: String },
       quantity: { type: Number },
-      subPrice: { type: Number },
+      price: { type: Number },
+      mainImage: { type: String },
     },
   ],
   deliveryFee: { type: Number },
