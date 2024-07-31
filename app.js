@@ -12,6 +12,8 @@ const deleteProduct = require("./Routes/deleteProduct");
 const createProduct = require("./Routes/createProduct");
 const updateOrders = require("./Routes/updateOrders");
 const createOrders = require("./Routes/createOrders");
+const sendMail = require("./Routes/sendMail");
+const tracking = require("./Routes/tracking");
 
 const PORT = process.env.PORT || 5001;
 
@@ -35,6 +37,8 @@ app.use("/deleteProduct", deleteProduct);
 app.use("/createProduct", createProduct);
 app.use("/updateOrders", updateOrders);
 app.use("/createOrders", createOrders);
+app.use("/sendMail", sendMail);
+app.use("/tracking", tracking);
 
 app.listen(PORT, () => {
   console.log("Server Started");
