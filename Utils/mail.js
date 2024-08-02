@@ -1,12 +1,14 @@
+require("dotenv").config(); // Load environment variables
+
 const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
-  host: "mail.zunim.com.ng",
-  port: 465, //465 is true & other port are false
-  secure: true,
+  host: process.env.EMAIL_HOST,
+  port: process.env.EMAIL_PORT,
+  secure: process.env.EMAIL_PORT == 465, // true for 465, false for other ports
   auth: {
-    user: "support@zunim.com.ng",
-    pass: "Zunimsupport@14",
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
   tls: {
     rejectUnauthorized: false,
@@ -15,7 +17,7 @@ const transporter = nodemailer.createTransport({
 
 async function sendMail(to, subject, text, html) {
   const mailOptions = {
-    from: "support@zunim.com.ng",
+    from: process.env.EMAIL_USER,
     to,
     subject,
     text,

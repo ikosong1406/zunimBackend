@@ -1,14 +1,18 @@
 const express = require("express");
 const router = express.Router();
+require("dotenv").config();
 const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
-  host: "mail.zunim.com.ng",
-  port: 465,
-  secure: true, // true for 465, false for other ports
+  host: process.env.EMAIL_HOST,
+  port: process.env.EMAIL_PORT,
+  secure: process.env.EMAIL_PORT == 465, // true for 465, false for other ports
   auth: {
-    user: "support@zunim.com.ng",
-    pass: "Zunimsupport@14", // Replace with your actual email password
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+  tls: {
+    rejectUnauthorized: false,
   },
 });
 
