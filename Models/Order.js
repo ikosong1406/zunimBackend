@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 const OrderSchema = new mongoose.Schema({
-  status: { type: String, default: "pending" },
+  status: { type: String, default: "processing" },
   date: { type: Date, default: Date.now },
   customer: {
     firstName: { type: String },
