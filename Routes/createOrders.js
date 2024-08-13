@@ -3,8 +3,6 @@ const router = express.Router();
 const Orders = require("../Models/Order");
 const { sendMail } = require("../Utils/mail");
 const { OrderConfirmation } = require("../Templates/orderTemplate");
-const twilio = require("twilio");
-require("dotenv").config(); // Load environment variables
 
 router.post("/", async (req, res) => {
   const {
